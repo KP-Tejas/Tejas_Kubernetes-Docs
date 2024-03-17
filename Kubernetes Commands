@@ -11,3 +11,8 @@ kubectl get pod -n kube-system -o wide | grep weave (This will give the weave ne
 kubectl exec -n kube-system weave-net-dkgbq -c weave -- /home/weave/weave --local status (This command will give the connection establishment among the peers---very important)
 kubectl run test --image=nginx (This command will create and run the pod)
 kubectl get pod -o wide ( This command will give all the pods which are running on default namespaces with their IP)
+
+##############################################################
+Kubectl get pod -o wide (To get the pods with default namespaces)
+kubectl get deployment (To get the deployement)
+
