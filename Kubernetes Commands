@@ -1,1 +1,2 @@
-
+kubectl get node (This will give all the nodes which are on the Master and Worker Node)
+kubectl get ns or kubectl get namespaces ( This will give all the name spaces)
