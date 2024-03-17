@@ -15,4 +15,9 @@ kubectl get pod -o wide ( This command will give all the pods which are running 
 ##############################################################
 Kubectl get pod -o wide (To get the pods with default namespaces)
 kubectl get deployment (To get the deployement)
-
+kubectl apply -f <file name>
+kubectl get service or kubectl get svc
+kubectl describe svc nginx-service (here we will check the pod-service connections; we have to ensure endpoints of the pods are same as our pods which are running on master node)
+kubectl get ep (This will give the end point of service in one line; very usefull command)
+kubectl get all (This will give all the resources which are on default namespaces)
+kubectl edit svc nginx-service or kubectl edit deployment nginx-deployment (here we can edit and apply the changes then if necessary the  pod will restart)
