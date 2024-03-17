@@ -1,2 +1,8 @@
 kubectl get node (This will give all the nodes which are on the Master and Worker Node)
+kubectl get node -o wide ((This will give all the nodes which are on the Master and Worker Node with thier IP address)
 kubectl get ns or kubectl get namespaces ( This will give all the name spaces)
+kubectl get pod -n kube-system (This will give the pods which are running on kube-system namespace pod)
+kubectl get pod -n kube-system -o wide (This will give the all pods with IP address which are running on kube-system namespace pod)
+kubectl describe pod coredns-76f75df574-5cfz8 -n kube-system (This command will give the IP address of this perticular pod with some extra details)
+kubectl get pod -A -o wide (This will give all the pods which are running on default name spaces)
+kubectl get pod -A -o wide | grep weave-net or kubectl get pod -A | grep weave-net (This will give all the pods which are related to weavenet.
