@@ -22,3 +22,23 @@ spec:
         - containerPort: 80
 
 #################Sketelon of the Service file#####################
+vim nginx-service.yml
+kubectl apply -f nginx-service.yml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+
+
+
+
+
+
