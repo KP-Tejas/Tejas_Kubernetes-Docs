@@ -32,5 +32,39 @@ kubectl get pod -l app=nginx (above 2 commands will give the details above the s
 kubectl get pod -n kube-system -show-labels (automatically added by kubernetes)
 kubectl get node --show-labels (By kubernetes)
 ########################################################################################################################
+                                             Scale up and Scale down by imperative commands.
+kubectl scale deployment nginx-deployment --replicas=4 (Scale up)
+kubectl scale deployment nginx-deployment --replicas=2 (Scale down)
+
+ ##########################################################################################################################
+                                                  Record Options
+kubectl scale deployment nginx-deployment --replicas=4 --record=true
+kubectl scale deployment nginx-deployment --replicas=2 --record=true
+
+kubectl rollout history deployment nginx-deployment.
+
+###################################################################################################
+Testing the nginx app accessibility
+Step1: kubectl exec -it <pod name> -- bash
+step2: curl http://<Service name>:8080
+                 or
+       curl http://10.98.83.8:8080 
+
+###################################################################################################
+                     Creating the new name space and checking its accesibility
+kubectl create ns test-ns (This will create the name space called ns)
+kubectl run test-nginx-svc -n test-ns --image=nginx (Createing the pod with ns called test-ns)
+kubectl get pod -n test-ns -o wide (This command will give the pods which are inside the ns name space)
+kubectl exec -it test-nginx-svc -n test-ns -- bash(This will get interactive terminal)
+curl http://nginx-service.default:8080 (u have to define the name space here)
+or 
+curl http://nginx-service.default.svc.cluster.local:8080 (full form of defining the command)
+
+#####################################################################################################
+
+
+
+
+
 
 
